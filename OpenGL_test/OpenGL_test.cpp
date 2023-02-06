@@ -11,12 +11,15 @@ void init() {
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     //glOrtho(left, right, bottom, top, near, far)
-    glOrtho(-5.0, 5.0, -5.0, 5.0, -1.0, 1.0);
+    glOrtho(-2.0, 4.0, -4.0, 2.0, -1.0, 1.0);
+
     return;
 }
 void display() {
 
     glClear(GL_COLOR_BUFFER_BIT);
+    //glViewport(x, y, w, h)
+    glViewport(400, 240, 240, 240);
 
     glBegin(GL_POLYGON);
         glVertex2f(-2.0, 0.0);
@@ -39,13 +42,14 @@ int main(int argc, char ** argv)
     glutInit(&argc, argv);
     //Setting Display mode
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-    //Create Window for display
-    glutCreateWindow("simple window");
     //Setting position to display
     glutInitWindowPosition(0, 0);
     //Setting window sizes
-    glutInitWindowSize(500, 500);
+    glutInitWindowSize(640, 480);
+
     //Setup <display> as callback for display event
+    //Create Window for display
+    glutCreateWindow("simple window");
     glutDisplayFunc(display); 
     //Set OpenGL state (user-defined)
     init();
