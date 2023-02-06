@@ -12,10 +12,10 @@ void display() {
     glClearColor(21 / 255.0, 239 / 255.0, 116/ 255.0, 0.81);
     glClear(GL_COLOR_BUFFER_BIT);
     glBegin(GL_POLYGON);
-        glVertex2f(0, 0);
-        glVertex2f(0, 1);
-        glVertex2f(1, 0.5);
-        glVertex2f(1, 1.5);
+        glVertex2f(-0.5, -0.5);
+        glVertex2f(-0.5, 0.5);
+        glVertex2f(0.5, 0.5);
+        glVertex2f(0.5, -0.5);
     glEnd();
     glFlush();
 }
