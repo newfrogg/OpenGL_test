@@ -6,17 +6,31 @@
 
 using namespace std;
 void init() {
+    glColor3f(0, 0, 1);
+    glClearColor(1, 1, 1, 1);
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    //glOrtho(left, right, bottom, top, near, far)
+    glOrtho(-5.0, 5.0, -5.0, 5.0, -1.0, 1.0);
     return;
 }
 void display() {
-    glClearColor(21 / 255.0, 239 / 255.0, 116/ 255.0, 0.81);
+
     glClear(GL_COLOR_BUFFER_BIT);
+
     glBegin(GL_POLYGON);
-        glVertex2f(-0.5, -0.5);
-        glVertex2f(-0.5, 0.5);
-        glVertex2f(0.5, 0.5);
-        glVertex2f(0.5, -0.5);
+        glVertex2f(-2.0, 0.0);
+        glVertex2f(-2.0, 2.0);
+        glVertex2f(0.0, 2.0);
+        glVertex2f(0.0, 0.0);
     glEnd();
+
+    glBegin(GL_POLYGON);
+        glVertex2f(0.0, -4.0);
+        glVertex2f(2.0, 0.0);
+        glVertex2f(4.0, -4.0);
+    glEnd();
+
     glFlush();
 }
 int main(int argc, char ** argv)
