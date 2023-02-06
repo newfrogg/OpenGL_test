@@ -15,24 +15,35 @@ void init() {
 
     return;
 }
+void drawFigure() {
+    glBegin(GL_POLYGON);
+    glVertex2f(-2.0, 0.0);
+    glVertex2f(-2.0, 2.0);
+    glVertex2f(0.0, 2.0);
+    glVertex2f(0.0, 0.0);
+    glEnd();
+
+    glBegin(GL_POLYGON);
+    glVertex2f(0.0, -4.0);
+    glVertex2f(2.0, 0.0);
+    glVertex2f(4.0, -4.0);
+    glEnd();
+}
 void display() {
 
     glClear(GL_COLOR_BUFFER_BIT);
     //glViewport(x, y, w, h)
-    glViewport(400, 240, 240, 240);
+    glViewport(320, 240, 320, 240);
+    drawFigure();
 
-    glBegin(GL_POLYGON);
-        glVertex2f(-2.0, 0.0);
-        glVertex2f(-2.0, 2.0);
-        glVertex2f(0.0, 2.0);
-        glVertex2f(0.0, 0.0);
-    glEnd();
+    glViewport(0, 0, 320, 240);
+    drawFigure();
 
-    glBegin(GL_POLYGON);
-        glVertex2f(0.0, -4.0);
-        glVertex2f(2.0, 0.0);
-        glVertex2f(4.0, -4.0);
-    glEnd();
+    glViewport(0, 240, 320, 240);
+    drawFigure();
+
+    glViewport(320, 0, 320, 240);
+    drawFigure();
 
     glFlush();
 }
