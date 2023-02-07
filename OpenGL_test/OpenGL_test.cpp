@@ -42,15 +42,16 @@ int main(int argc, char ** argv)
     glutInit(&argc, argv);
     //Setting Display mode
     glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+    //Setting window sizes
+    glutInitWindowSize(640, 480);
     //Create Window for display
     glutCreateWindow("simple window");
     //Setting position to display
     glutInitWindowPosition(0, 0);
-    //Setting window sizes
-    glutInitWindowSize(500, 500);
     //Setup <display> as callback for display event
     glutDisplayFunc(display); 
     //Set OpenGL state (user-defined)
+    // Setting contexture (gl not glut(display))
     init();
     //Create events loop
     glutMainLoop();
