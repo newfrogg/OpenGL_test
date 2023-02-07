@@ -1,5 +1,8 @@
 // OpenGL_test.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
+/*Reference
+https://www.opengl.org/resources/libraries/glut/spec3/node1.html
+*/
 
 #include <iostream>
 #include <GL/glut.h>
